@@ -1,0 +1,83 @@
+/*
+////////////////////////////////////////////////////////////////////////////////
+// scss/components/_typography.scss : Font styles
+////////////////////////////////////////////////////////////////////////////////
+*/
+
+
+// Main Container
+.container {
+  color: palette(silver-chalace, dark);
+  font-size: em(18px);
+  font-family: $font-family--primary;
+  font-weight: $font-weight--medium;
+  @include media-query(large) {
+    font-size: em(18px);
+  }
+}
+
+
+// Grid Container
+.grid {
+  @include e(row) {
+    margin-top: em(20px);
+    p {
+      margin-bottom: em(20px);
+      padding-left: 20px;
+      padding-right: 20px;
+      line-height: em(27px, 18px);
+    }
+  }
+}
+
+
+// Main Headlines
+.headline {
+  @include m(primary) {
+    @extend %headline-primary;
+    padding-left: em(10px);
+    margin-top: 0;
+    margin-bottom: em(40px, 30px);
+    color: $color--primary;
+    @include media-query(medium) {
+      text-align: center;
+      padding-left: 0;
+    }
+  }
+  @include m(secondary) {
+    @extend %headline-secondary;
+    color: palette(silver-chalace,light);
+    margin-top: em(80px, 24px);
+    margin-bottom: em(22px, 24px);
+  }
+}
+
+
+// Links
+.link {
+  text-decoration: none;
+  color: $color--secondary;
+  font-weight: $font-weight--bold;
+}
+
+.card {
+  @include media-query(medium) {
+    margin-top: 0;
+  }
+}
+// Blockquote
+.blockquote{
+  margin: 0;
+  margin-bottom: em(25px);
+  font-size: em(21px);
+  font-style: italic;
+  border-left: em(6px) solid $color--primary;
+  border-radius: em(5px);
+  padding-left: em(10px);
+  @include media-query(medium) {
+    margin-left: em(40px);
+    padding-left: em(20px);
+    padding-right: em(40px);
+    letter-spacing: $letter-space;
+  }
+}

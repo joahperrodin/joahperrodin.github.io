@@ -1,0 +1,126 @@
+/////////////////////////////////////////////////////////////////////////////////
+// scss/utilities/_config.scss :  Global variables for fonts, breakpoints, colors
+/////////////////////////////////////////////////////////////////////////////////
+
+// Font Stacks
+$font-url--google        : 'https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
+$font-family--sans-serif : Helvetica, Arial, sans-serif;
+$font-family--primary    : 'Lato', 'Helvetica Neue', $font-family--sans-serif;
+$font-family--secondary  : 'Helvetica Neue', $font-family--sans-serif;
+
+// Font weights
+$font-weight--thin       : 100;
+$font-weight--light      : 300;
+$font-weight--medium     : 400;
+$font-weight--bold       : 700;
+$font-weight--ultra-bold : 900;
+
+// Text
+$base__font-size   : 16px;
+$base__line-height : 24px;
+$letter-space      : 1px;
+
+// Descriptive Base Colors
+$white           : #fff;
+$black           : #0b0b0b;
+$silver-chalace  : #a2a2a2;
+
+$malibu          : #55def8;
+$viking          : #58e1c1;
+
+$emerald         : #63cc82;
+$sunglo          : #e4757a;
+$coral           : #fd7856;
+$purple-majesty  : #927bc1;
+
+$riptide         : #80e8d1;
+$shakespeare     : #3fabca;
+$anakiwa         : #7ee6fd;
+$french-lilac    : #deb2ee;
+$vista-blue      : #88d9a0;
+$sea-pink        : #ec9fa3;
+$vivid-tangerine : #fd9f85;
+
+// Color usage
+$color--primary    : $viking;
+$color--secondary  : $malibu;
+$color--accent     : $emerald;
+$color--shadow     : rgba($black, .2);
+
+////////////////////////////////////////////////////////////////////////////////
+// THEME COLORS
+////////////////////////////////////////////////////////////////////////////////
+
+// Color Palette Modifiers
+$palettes: (
+silver-chalace: (
+    xx-light  : lighten($silver-chalace, 25%),
+    x-light   : lighten($silver-chalace, 15%),
+    light     : lighten($silver-chalace, 8%),
+    base      : $silver-chalace,
+    dark      : darken($silver-chalace, 8%),
+    x-dark    : darken($silver-chalace, 15%),
+    xx-dark   : darken($silver-chalace, 25%),
+  ),
+  black: (
+    light     : lighten($black, 10%),
+    base      : $black,
+    dark      : darken($black, 10%)
+  )
+);
+
+// Button colors
+$btn-colors: (
+  default : $malibu,
+  success : $emerald,
+  error   : $sunglo,
+  warning : $coral,
+  info    : $purple-majesty,
+);
+
+$grid-colors: (
+  col--3     : $french-lilac,
+  col--4     : $anakiwa,
+  col--5     : $vista-blue,
+  col--6     : $shakespeare,
+  col--7     : $sea-pink,
+  col--8     : $vivid-tangerine,
+  col--12    : $riptide,
+);
+
+// Selectors : used to manipulate bg-colors()
+$selector--element  : '__';
+$selector--modifier : '--';
+
+////////////////////////////////////////////////////////////////////////////////
+// LAYOUT
+////////////////////////////////////////////////////////////////////////////////
+
+
+//Breakpoints
+$breakpoints: (
+  small    : 767px,
+  medium   : 768px,
+  large    : 1100px,
+);
+
+// Grid Container
+$gutter:    10px;
+$max-width: 1400px;
+$max-width--container: 80%;
+
+//Grid
+$grid-column-width          : 65px;
+$grid-gutter-width          : 20px;
+$grid-column-count          : 12;
+$max-width--grid-container  : 1400px;
+
+// Border radius
+$border-radius--default     : .4em;
+$border-radius--round       : 50%;
+
+// Transitions
+$trns-duration   : .3s;
+
+// Path to Assets
+$path--relative       : "../img";

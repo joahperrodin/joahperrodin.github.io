@@ -1,0 +1,156 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// scss/utilities/_mixins.scss :  Mixins for: Media Queries, Flexbox settings, Element and Modifier BEM Selectors
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Flexbox
+////////////////////////////////////////////////////////////////////////////////
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  @content;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Grid Columns
+////////////////////////////////////////////////////////////////////////////////
+@mixin grid--columns {
+  // todo: review breakpoints i am not liking the values for config.
+  @for $i from 1 through $grid-column-count {
+    $context: grid-context($grid-column-width, $grid-column-count, $grid-gutter-width) !global;
+    $target: ($grid-column-width * $i) + ($grid-gutter-width * ($i - 1));
+    &--#{$i} {
+      width: percentage($target / $context);
+    }
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Images
+////////////////////////////////////////////////////////////////////////////////
+@mixin image-replace($image, $width, $height, $display: block) {
+  background-image: url('#{$path--relative}/#{$image}');
+  background-repeat: no-repeat;
+  width: $width;
+  height: $height;
+  display: $display;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Typography
+////////////////////////////////////////////////////////////////////////////////
+@mixin text($font-size: $base__font-size, $line-height: $base__line-height, $font-weight: null, $color: null) {
+  font-size:   $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $color;
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Theme Colors
+// $selector inserts BEM modifier '--' by default, this allow more meaningful naming in the grid color map
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+@mixin bg-colors($map,$placeholder, $selector: $selector--modifier) { // By setting $selector vars in config I can manupulate BEM easier
+  @each $theme, $color in $map {
+    &#{$selector}#{$theme} {
+      background-color: $color;
+      @extend #{$placeholder}; // allows flexabilty on which placeholder to use making this more reusable
+    }
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// BEM Selectors
+////////////////////////////////////////////////////////////////////////////////
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+
+
+@mixin m($element) {
+  &--#{$element} {
+    @content;
+  }
+}
+
+
+// Same as the 2 above, but as a single function  { just trying to push my knowledge }
+@mixin bem($element, $selector: $selector--element) {
+  @if $selector == '__' or $selector == '--'{
+    &#{$selector}#{$element} {
+      @content;
+    }
+  }
+  @else {
+    @error '\"#{$element}\" is not a valid selector element! options are: \"#{$selector--element}\" (default) or \"#{$selector--modifier}\"';
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Media Queries
+////////////////////////////////////////////////////////////////////////////////
+
+// Media query - breakpoints
+@mixin media-query($breakpoint) {
+  $value:  map-get($breakpoints, $breakpoint);
+  $small:  map-get($breakpoints, medium);
+  $keys:   map-keys($breakpoints); // Returns a list of keys
+  @if map-has-key($breakpoints, $breakpoint) { // bool value true/false
+    @if $value < $small {
+      @media (max-width: $value) {
+        @content;
+      }
+    }
+    @else {
+      @media (min-width: $value) {
+        @content;
+      }
+    }
+  }
+  @else {
+    @error '\"#{$breakpoint}\" is not a valid breakpoint value! options: #{$keys}';
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Helpers
+////////////////////////////////////////////////////////////////////////////////
+
+// Pseudo elements
+@mixin pseudo-element(
+$element,
+$element-width:  null,
+$element-height: null
+) {
+  @if $element == 'before' or $element == 'after' {
+    &:#{$element} {
+      @extend %pseudos;
+      width: $element-width;
+      height: $element-height;
+      @content;
+    }
+  }
+  @else {
+    @error '\"#{$element}\" is not a valid pseudo-element!';
+  }
+}
+
+
+// Adjacent sibling margins : http://blog.teamtreehouse.com/sass-tip-double-ampersand-selector
+@mixin doubly($margin: 1em) {
+  & + & {
+    margin-left: $margin;
+    @content;
+  }
+}

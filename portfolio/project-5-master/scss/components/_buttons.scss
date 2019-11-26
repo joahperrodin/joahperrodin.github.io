@@ -1,0 +1,23 @@
+/*
+////////////////////////////////////////////////////////////////////////////////
+// scss/components/_buttons.scss :  Button styles
+////////////////////////////////////////////////////////////////////////////////
+*/
+
+
+// Button background colors
+.theme__colors.btn{
+  @include bg-colors($btn-colors,'%buttons');
+}
+
+
+// Column style
+[class^='btn--'] {
+  // margin-left: em(30px);
+  align-self:stretch;
+  margin-right: em(40px);
+  width: 100%;
+  &:last-of-type {
+    margin-right: 0;
+  }
+}

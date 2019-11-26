@@ -1,0 +1,435 @@
+/* CSS File for The Code Review */
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+p {
+    font-size: .875rem;
+    font-weight: 300;
+    color: #aaa;
+}
+
+hr {
+    height: 2px;
+    width: 100%;
+    border: 0;
+    background-color: #0071ce;
+    margin-bottom: 25px;
+}
+
+.clearfix::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+
+/* Header Styling */
+
+.headline {
+    background-color: #0071ce;
+    margin: 0 0 25px 0;
+    padding: 10px;
+    letter-spacing: .00625rem;
+}
+
+.headline h1 {
+    color: white;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.signup {
+    margin: 10px auto 20px;
+    text-align: center;
+}
+
+.doublerule {
+    display: inline-block;
+    width: 100%;
+}
+
+.doublerule::after {
+    content: "";
+    display: block;
+    margin-top: 7px;
+    width: 100%;
+    height: 2px;
+    background-color: #0071ce;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 5%;
+  min-height: calc(100vh - 89px);
+}
+
+.contact {
+  margin-top: 20px;
+}
+
+.icon {
+  display: inline-block;
+  /*float: left;*/
+  vertical-align: middle;
+}
+
+/* Form Styling */
+
+form {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+legend {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+label {
+    color: #aaa;
+    font-size; .875rem;
+    font-weight: 300;    
+}
+
+label::after {
+    content: "";
+    display: block;
+    padding-bottom: .5rem;
+}
+
+/* Form Fields */
+
+input[id="name_f"],
+input[id="name_l"],
+input[id="email"],
+input[id="phone"],
+input[id="street"],
+input[id="city"],
+input[id="state"],
+input[id="zip"],
+input[id="tel"],
+input[id="username"],
+input[id="password"],
+textarea,
+select {
+    background: #eee;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Merriweather', serif;
+    font-size: .875rem;
+    font-weight: 300;
+    height: auto;
+    margin: 0 0 20px 0;
+    outline: 0;
+    padding: 15px 13px 15px 0;
+    width: 100%;
+    color: #8a97a0;
+    text-indent: 1rem;
+    transition: box-shadow 0.5s ease, background-color 0.5s ease;
+}
+
+/* Form Fields Hover State */
+
+input[id="name_f"]:hover,
+input[id="name_l"]:hover,
+input[id="email"]:hover,
+input[id="phone"]:hover,
+input[id="street"]:hover,
+input[id="city"]:hover,
+input[id="state"]:hover,
+input[id="zip"]:hover,
+input[id="tel"]:hover,
+input[id="username"]:hover,
+input[id="password"]:hover,
+textarea:hover,
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+  background: #ddd;
+}
+
+select:hover {
+  background-color: #ddd;
+  background-image: url(../images/down-dark.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.pw {
+  font-size: .7rem;
+}
+
+::-webkit-input-placeholder {
+  font-size: .7rem;
+  color: #bbb;
+  text-align: right;
+  font-weight: 300;
+  font-style: italic;
+}
+
+:-moz-placeholder {
+  /* older Firefox*/
+  font-size: .7rem;
+  color: #bbb;
+  text-align: right;
+  font-weight: 300;
+  font-style: italic;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: .7rem;
+  color: #bbb;
+  text-align: right;
+  font-weight: 300;
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  font-size: .7rem;
+  color: #bbb;
+  text-align: right;
+  font-weight: 300;
+  font-style: italic;
+}
+
+select {
+  height: 50px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1rem;
+  text-overflow: '';
+  background-image: url(../images/down-arrow.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+/* Zip Code Styling */
+
+input[id="zip"] {
+    width: 180px;
+    margin-bottom: 10px;
+}
+
+/* Submit Button Styling */
+
+input:hover[type="submit"] {
+  background: #ffb6c1;
+}
+
+input:focus,
+select: focus,
+textarea:focus {
+    padding: 13px 11px 13px 0;
+    border: 2px solid #455769;
+}
+
+[type="radio"],
+[type="checkbox"],
+[type="submit"] {
+  display: none;
+}
+
+[type="radio"] + label {
+  display: block;
+}
+
+/* Unchecked Radio Button */
+
+[type="radio"] + label:before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 3px;
+  background: #eee;
+  box-shadow: 0 0 0 0.15rem #eee;
+  margin-right: 12px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease, background-color 0.5s ease;
+}
+
+/* Checked Radio Buttons */
+
+[type="radio"]:checked + label:before {
+  border: 3px solid white;
+  background: #0071ce;
+  box-shadow: 0 0 0 0.15em #0071ce;
+  width: .5em;
+  height: .5em;
+}
+
+/* Unchecked Boxes */
+
+[type="checkbox"] + label:before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  border-radius: 20%;
+  border: 0;
+  background: #eee;
+  box-shadow: 0 0 0 0.15rem #eee;
+  margin-right: 12px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease, background-color 0.5s ease;
+}
+
+/* Checked Boxes */
+
+[type="checkbox"]:checked + label:before {
+  content: url(../images/checkmark.png);
+  box-shadow: 0 0 0 0.15em #0071ce;
+  width: 1em;
+  height: 1em;
+}
+
+/* Submit Button Styling */
+
+button[type="submit"] {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 60px;
+  vertical-align: middle;
+  border-radius: 6px;
+  border: 0;
+  background-color: #0071ce;
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0062a5;
+}
+
+.group {
+  padding-bottom: 20px;
+}
+
+/* Footer Styling */
+
+footer {
+    background-color: #0071ce;
+    color: white;
+    font-size: .7rem;
+    text-align: center;
+    padding-top: 18px;
+    height: 89px;
+}
+
+.foot p {
+    color: white;
+    font-weight: bold;
+}
+
+/* Media Query 760px */
+
+@media screen and (min-width: 760px) {
+
+  legend {
+    padding-top: 20px;
+  }
+
+/*---- Zip code box styling ----*/
+
+input[id="zip"] {
+  width: 180px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  min-height: 110px;
+  max-width: 100%;
+}
+
+.pw {
+  font-size: .7rem;
+  width: 75%;
+  float: right;
+}
+
+}
+
+/* Media Query 1024px */
+
+@media screen and (min-width: 1024px) {
+    form {
+        max-width: 900px;
+        margin: 10px auto;
+        padding: 10px 0;
+    }
+    
+    legend {
+        text-align: center;
+        margin-top: 25px;
+    }
+    
+    .col_l {
+        float: left;
+        width: 50%;
+        padding-right: 2%;
+        border-right: 1px solid #ddd;
+    }
+    
+    .col_r {
+        float: right;
+        width: 48%;
+    }
+    
+    .pw {
+        width: 100%;
+        float: left;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

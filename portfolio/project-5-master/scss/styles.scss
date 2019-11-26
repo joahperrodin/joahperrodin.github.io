@@ -1,0 +1,6 @@
+///////////////////////////////////////////////////////////////
+// scss/styles.scss : GLOBAL IMPORT
+///////////////////////////////////////////////////////////////
+@import 'utilities/index', // Load all the helper files/tools
+        'base/index',      // Applies the reset then the basebase
+        'components/index' // Applies/utilizes the utilities to individual components

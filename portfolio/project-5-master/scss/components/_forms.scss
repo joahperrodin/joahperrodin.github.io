@@ -1,0 +1,26 @@
+/*
+////////////////////////////////////////////////////////////////////////////////
+// scss/components/_forms.scss :  for form styles
+////////////////////////////////////////////////////////////////////////////////
+*/
+
+
+.form {
+  @include bem(label) {
+    @include bem(hidden, $selector--modifier){
+      @extend .srt;
+    }
+  }
+    @include bem(input) {
+      @include text(em(14px), em(24px,14px),$font-weight--bold,palette(silver-chalace, light));
+      width: 100%;
+      padding: 0 em(15px, 14px);
+      outline: 0;
+      border: 0;
+      margin-bottom: em(20px, 14px);
+      border-bottom: 6px solid $color--primary;
+      &:focus {
+        border-bottom-color: palette(silver-chalace,dark);
+      }
+    }
+}

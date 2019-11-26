@@ -1,0 +1,42 @@
+/*
+////////////////////////////////////////////////////////////////////////////////
+// scss/components/_navigation.scss : Nav Menu styles
+////////////////////////////////////////////////////////////////////////////////
+*/
+
+
+.nav {
+  margin-bottom: em(40px);
+  text-align: center;
+  width: 100%;
+  @include flex(column);
+  @include bem(item) {
+    list-style-type: none;
+    a {
+      margin: 0;
+      @extend %navigation-menu--links;
+      color: palette(silver-chalace, dark);
+      @include media-query(medium){
+        width: 100%;
+      }
+      li {
+        margin: 0;
+      }
+      &:hover {
+        @extend %navigation-menu--on;
+      }
+      &:focus {
+        color: $white;
+      }
+    }
+  }
+  @include media-query(medium){
+    @include flex(row){
+      & * {
+        margin-top: em(6px);
+        margin-left: em(10px);
+        justify-content: space-around;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+/*
+////////////////////////////////////////////////////////////////////////////////
+// scss/components/_images.scss :  Image styling
+////////////////////////////////////////////////////////////////////////////////
+*/
+
+[class^='img--'] {
+  @extend %centered;
+  margin-bottom: em(27px);
+}
+.img {
+  @include m(logo) {
+    @extend %image;
+  }
+  @include m(frame) {
+    border: 1px solid palette(silver-chalace, light);
+    padding: em(8px);
+    @extend %image;
+  }
+  @include m(avatar) {
+    @extend %image;
+  }
+}

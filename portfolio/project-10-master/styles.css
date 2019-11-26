@@ -1,0 +1,118 @@
+/* Global Layout Set-up */
+* {
+  box-sizing: border-box;
+
+  /* outline: 1px red solid; */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header h1{
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.5em;
+}
+.body{
+  padding: 2em;
+}
+.employee img{
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  padding: 1em;
+}
+.employeeFull img{
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+  padding: 0;
+}
+
+.employee{
+  display: flex;
+  border: 1.5px solid lightgrey;
+  border-radius: 10px;
+  width: 400px;
+  margin: 1em;
+  transition: transform .3s ease;
+
+}
+.employee:hover{
+  border: 1.5px solid darkgrey;
+  box-shadow: 5px 5px 8px lightgrey;
+  transform: translate(-3px, -3px);
+
+}
+.employeeData{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.employeeData h2{
+  font-size: 1.1em;
+  margin: .4em 0;
+}
+.employeeData p{
+  font-size: .8em;
+  margin: .4em 0;
+  color: grey;
+}
+.employeeFull{
+  list-style: none;
+  text-align: center;
+}
+.employeeFull p{
+  font-size: 1em;
+  color: grey;
+}
+.employeeExtraData{
+  border-top: 1px solid lightgrey;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 1em 2em;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 500px;
+  min-width: 300px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
